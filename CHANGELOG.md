@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bundled themed tile glyphs for the four default services and a redesigned
   16:9 Fire TV banner, square launcher icons, and adaptive icon so the
   StreamLine logo reads cleanly in the Fire TV app picker.
+- Branded splash screen with the StreamLine icon and wordmark while the
+  launcher initialises.
 - `THIRD_PARTY_NOTICES.md` with photographer and license details for the
   bundled background images.
 
@@ -40,6 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Default tiles now recognize Amazon Fire TV package variants for YouTube and
   YouTube TV, and the defaults migration re-runs once to seed them on existing
   installs.
+- Boot startup now waits for Fire OS to settle and launches through a
+  `PendingIntent`, which is more reliable than a direct activity start from
+  `BOOT_COMPLETED`.
 - MLB TV is recognised on Fire TV (`com.bamnetworks.mobile.android.gameday.atbat`)
   and replaces Spotify as the fourth default tile.
 

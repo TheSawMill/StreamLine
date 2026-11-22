@@ -4,6 +4,7 @@ import android.app.Activity
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -13,10 +14,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.streamline.tv.R
 import com.streamline.tv.ui.components.ExitDialog
+import com.streamline.tv.ui.components.SplashScreen
 import com.streamline.tv.ui.home.HomeScreen
 import com.streamline.tv.ui.home.HomeViewModel
 import com.streamline.tv.ui.settings.ManageAppsScreen
 import com.streamline.tv.ui.settings.SettingsScreen
+import kotlinx.coroutines.delay
 
 private enum class Screen { HOME, SETTINGS, MANAGE_APPS }
 
@@ -30,9 +33,20 @@ fun StreamlineApp(viewModel: HomeViewModel) {
 
     var screen by rememberSaveable { mutableStateOf(Screen.HOME) }
     var showExitDialog by remember { mutableStateOf(false) }
+    var showSplash by remember { mutableStateOf(true) }
 
-    BackHandler(enabled = screen != Screen.HOME) { screen = Screen.HOME }
-    BackHandler(enabled = screen == Screen.HOME) { showExitDialog = true }
+    LaunchedEffect(Unit) {
+        delay(SPLASH_DURATION_MS)
+        showSplash = false
+    }
+
+    BackHandler(enabled = !showSplash && screen != Screen.HOME) { screen = Screen.HOME }
+    BackHandler(enabled = !showSplash && screen == Screen.HOME) { showExitDialog = true }
+
+    if (showSplash) {
+        SplashScreen()
+        return
+    }
 
     when (screen) {
         Screen.HOME -> HomeScreen(
@@ -95,3 +109,5 @@ fun StreamlineApp(viewModel: HomeViewModel) {
         )
     }
 }
+
+private const val SPLASH_DURATION_MS = 900L

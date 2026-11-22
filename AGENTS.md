@@ -174,9 +174,9 @@ clock ticker ────────┘
 - Home is favourites-only unless `showAllApps` is enabled in Settings. Hidden
   apps are always excluded, and Manage apps still lists every launchable app.
   The four default services use bundled themed glyphs so their tiles match.
-- UI screens are switched with a private `Screen` enum in `StreamlineApp.kt`.
-  No Navigation library: there are only three screens and back handling is
-  explicit.
+- A short branded `SplashScreen` covers initialisation, then UI screens are
+  switched with a private `Screen` enum in `StreamlineApp.kt`. No Navigation
+  library: there are only three screens and back handling is explicit.
 
 ### App discovery
 
