@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer chevron -->
+    <path
+        android:fillColor="#7BE8C6"
+        android:pathData="M28,26 L62,54 L28,82 L28,66 L44,54 L28,42 Z" />
+
+    <!-- Inner stream -->
+    <path
+        android:fillColor="#5BC8E8"
+        android:pathData="M54,26 L82,54 L54,82 L54,66 L66,54 L54,42 Z" />
+</vector>
