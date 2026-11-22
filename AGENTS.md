@@ -310,7 +310,10 @@ There are no automated tests yet. High-value first tests: WMO code mapping,
 
 - **Fire OS launcher replacement is not guaranteed.** Amazon restricts
   third-party launchers on some Fire OS versions; the HOME intent filter may be
-  ignored. Never promise Home-button interception.
+  ignored. On the tested TCL Fire TV, `set-home-activity` reported `Success`
+  but `resolve-activity` and the HOME button still selected Amazon's launcher.
+  `BootReceiver` starts StreamLine after boot instead. Never promise
+  Home-button interception.
 - **`QUERY_ALL_PACKAGES`** is required to enumerate apps on API 30+. Removing it
   will silently hide most apps on newer Fire OS.
 - **IP geolocation** is city-level and may be wrong behind VPNs or CGNAT. Manual

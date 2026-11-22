@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   restores every launchable app. Manage apps remains the full catalogue.
 - The exit dialog now opens Amazon's Fire TV launcher explicitly, so you can
   leave StreamLine even after setting it as the default Home app.
+- Added a boot receiver so StreamLine starts after a TV restart even on Fire OS
+  builds that ignore default-launcher changes.
 - README project status, supported platforms, architecture, and roadmap now
   reflect the v0.1.0 functional build.
 - Replaced procedural Canvas nature scenes with bundled photorealistic landscape

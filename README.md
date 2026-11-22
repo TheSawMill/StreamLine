@@ -285,9 +285,9 @@ Restore the original launcher at any time:
 & $adb shell cmd package set-home-activity <saved-component>
 ```
 
-When accepted, this makes StreamLine the app that starts after boot and the one the **Home** button returns to. Press **Back** on Home, then choose **Exit to Fire TV** to open Amazon's launcher directly — this works even while StreamLine is the default Home app.
+StreamLine also registers a boot receiver, so it opens after a restart even when HOME replacement is blocked. Press **Back** on Home, then choose **Exit to Fire TV** to open Amazon's launcher directly — this works even after setting StreamLine as the default Home app.
 
-On some Fire OS versions you can also press **Home**, highlight **StreamLine TV**, and choose **Always**. Other versions ignore third-party Home apps entirely; the ADB command may appear to succeed but the Home button still opens Amazon's interface. This is an OS restriction, not a launcher bug.
+On some Fire OS versions you can also press **Home**, highlight **StreamLine TV**, and choose **Always**. Other versions ignore third-party Home apps entirely; the ADB command may report `Success` but the Home button still opens Amazon's interface. This is an OS restriction, not a launcher bug. On the TCL Fire TV used for this build, the command succeeded but HOME continued to resolve to `com.amazon.tv.launcher`, so use the Apps row to return to StreamLine after pressing Home.
 
 **Do not disable or uninstall the Amazon launcher.** It is the recovery path if a sideloaded launcher stops working.
 
