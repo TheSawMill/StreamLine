@@ -247,11 +247,12 @@ Streamline TV does not modify third-party streaming applications or remove adver
 ---
 
 ## 📄 License
+StreamLine TV is open-source software licensed under the
+[MIT License](LICENSE).
 
-License to be determined.
-
-A license will be selected and added as the project progresses.
+This software is provided "AS IS", without warranties of any kind.
+The authors and contributors disclaim liability for damages arising
+from its use, to the extent permitted by applicable law.
 
 ---
-
 **Streamline TV — Your TV. Your Apps. Your Experience.**
